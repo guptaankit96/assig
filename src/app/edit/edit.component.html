@@ -1,0 +1,54 @@
+<div class="container">
+    <h1>Employee Registration</h1>
+    <hr />
+    <form class="form-horizontal" [formGroup]="listing" (ngSubmit)=onUpdate()  #userForm="ngForm">
+  
+     
+  
+     <div class="form-group ">
+      <label>Employee Name</label>
+      <input required formControlName='emp' type="text" placeholder={{emp1}} class="form-control "  value="ankit"  ngModel value={{emp1}} >
+     
+    </div>
+  
+    <div class="form-group ">
+      <label>Age</label>
+      <input required formControlName='ag'  type="number" placeholder={{age}} name="ages" class="form-control " ngModel value={{age}}>
+    </div>
+    
+    <div class="form-group ">
+      <label>Mobile No.(10 digits only)</label>
+      <input required pattern="^\d{10}$" formControlName='mn' type="number" placeholder={{mna}} class="form-control " value={{mna}}>
+      
+    </div>
+    
+    <div class="form-group ">
+      <label>Address</label>
+      <input formControlName='adr' type="text" required placeholder={{adrs}} name="add" class="form-control " ngModel value={{adrs}}>
+    </div>
+    
+    <div class="form-group ">
+      <label>Email</label>
+      <input required formControlName='em' type="email" placeholder={{email}} class="form-control" value={{email}} >
+      
+    </div>
+    
+    <div class="form-group">
+        <label>Department</label>
+      <select required formControlName='depp'  class="custom-select" placeholder="----Select----" >
+        <option value="">{{dept}} </option>
+        <option *ngFor="let topic of topics">{{ topic }}</option>
+      </select>
+      
+    </div>
+           
+    <div class="form-group ">
+      <label>Bio</label>
+      <textarea required formControlName='bi' type="text" placeholder={{bio}} class="form-control " name="bios" > </textarea>
+    </div>
+      
+   
+
+    <button routerLink = "/" type = "submit" (click) = "onUpdate()">Update</button>
+    </form>
+  </div>

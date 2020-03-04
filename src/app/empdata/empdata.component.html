@@ -1,0 +1,32 @@
+
+
+<table class='table table-dark' >
+    <thead>
+    <tr>
+    <th scope='col'>SNo.</th>
+    <th scope='col'>Employee Name</th>
+    <th scope='col'>Age</th>
+    <th scope='col'>Mobile No.</th>
+    <th scope='col'>Address</th>
+    <th scope='col'>Email</th>
+    <th scope='col'>Depart</th>
+    <th scope='col'>Biography</th>
+    <th scope='col'></th>
+    <th scope='col'></th>
+    </tr>
+    </thead>
+    <tr *ngFor="let pp of sdat; let num = index">
+    <td scope='row'>{{num+1}}</td>
+    <td>{{ pp.emp }}</td>
+    <td>{{ pp.ag }}</td>
+    <td>{{ pp.mn }}</td>
+    <td>{{ pp.adr }}</td>
+    <td>{{ pp.em }}</td>
+    <td>{{ pp.depp }}</td>
+    <td>{{ pp.bi }}</td>
+    <td><button type="button" id="edit" (click) = "onEdit(num)" routerLink="/edit"  >Edit</button></td>
+    <td><button type="button" id="del" (click) = "onDel(num,pp)" >Delete</button></td>
+    </tr>
+    </table>
+
+    
